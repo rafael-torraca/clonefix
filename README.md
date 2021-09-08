@@ -1,4 +1,22 @@
-# Getting Started with Create React App
+# Important
+
+You have to create your own API_KEY in [The Movie db](https://www.themoviedb.org/) and
+export to the Tmdb.js to work properly.
+
+Ex:
+
+create file secretkey.js:
+```javascript
+const API_KEY = "&api_key=YOUR_API_KEY";
+
+export default API_KEY;
+```
+
+Import your API_KEY in "Tmdb.js":
+```javascript
+import API_KEY from "./secretkey";
+```
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

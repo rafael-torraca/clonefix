@@ -1,8 +1,8 @@
-const API_KEY = 'fa110dede82e7a663f2ff7beaa8717a8';
+import API_KEY from "./secretkey";
+
 const API_BASE = 'https://api.themoviedb.org/3';
 const DEFAULT_LANG = 'language=pt-BR';
-const API_QUERY = `&${DEFAULT_LANG}&api_key=${API_KEY}`;
-
+const API_QUERY = `${DEFAULT_LANG}${API_KEY}`;
 
 const basicFetch = async (endpoint) => {
   const req = await fetch(`${API_BASE}${endpoint}`);
@@ -23,37 +23,37 @@ const exportedFunctions = {
       {
         slug: 'trending',
         title: 'Recomendados para Você',
-        items: await basicFetch(`/trending/all/week?${API_QUERY}`)
+        items: await basicFetch(`/trending/all/week?&${API_QUERY}`)
       },
       {
         slug: 'toprated',
         title: 'Em Alta',
-        items: await basicFetch(`/movie/top_rated?${DEFAULT_LANG}&api_key=${API_KEY}`)
+        items: await basicFetch(`/movie/top_rated?${API_QUERY}`)
       },
       {
         slug: 'action',
         title: 'Ação',
-        items: await basicFetch(`/discover/movie?with_genres=28&${DEFAULT_LANG}&api_key=${API_KEY}`)
+        items: await basicFetch(`/discover/movie?with_genres=28&${API_QUERY}`)
       },
       {
         slug: 'comedy',
         title: 'Comédia',
-        items: await basicFetch(`/discover/movie?with_genres=35&${DEFAULT_LANG}&api_key=${API_KEY}`)
+        items: await basicFetch(`/discover/movie?with_genres=35&${API_QUERY}`)
       },
       {
         slug: 'horror',
         title: 'Terror',
-        items: await basicFetch(`/discover/movie?with_genres=27&${DEFAULT_LANG}&api_key=${API_KEY}`)
+        items: await basicFetch(`/discover/movie?with_genres=27&${API_QUERY}`)
       },
       {
         slug: 'romance',
         title: 'Romance',
-        items: await basicFetch(`/discover/movie?with_genres=10749&${DEFAULT_LANG}&api_key=${API_KEY}`)
+        items: await basicFetch(`/discover/movie?with_genres=10749&${API_QUERY}`)
       },
       {
         slug: 'documentary',
         title: 'Documentários',
-        items: await basicFetch(`/discover/movie?with_genres=99&${DEFAULT_LANG}&api_key=${API_KEY}`)
+        items: await basicFetch(`/discover/movie?with_genres=99&${API_QUERY}`)
       }
     ];
   },
