@@ -1,0 +1,2 @@
+GET https://api.themoviedb.org/3/genre/movie/list?language=pt-BR&api_key=fa110dede82e7a663f2ff7beaa8717a8 HTTP/1.1
+content-type: application/json
